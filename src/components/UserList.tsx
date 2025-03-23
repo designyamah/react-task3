@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store/store";
+import { AppDispatch, RootState } from "../store/store";
 import { fetchUsers } from "../store/userSlice";
 import UserCard from "./UserCard";
 import "../styles/UserList.css";
 
 const UserList: React.FC = () => {
-  const dispatch = useDispatch();
+  // Use AppDispatch type instead of the default dispatch type
+  const dispatch = useDispatch<AppDispatch>();
   const { users, status, error } = useSelector(
     (state: RootState) => state.users
   );
