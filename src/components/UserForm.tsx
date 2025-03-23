@@ -54,13 +54,22 @@ const UserForm: React.FC = () => {
 
     if (name.includes(".")) {
       const [parent, child] = name.split(".");
-      setFormData((prev) => ({
-        ...prev,
-        [parent]: {
-          ...prev[parent as keyof typeof prev],
-          [child]: value,
-        },
-      }));
+      setFormData((prev) => {
+        // Create a properly typed version of the nested object
+        const parentObj = prev[parent as keyof typeof prev];
+
+        // Make sure we're working with an object before spreading
+        if (parentObj && typeof parentObj === "object") {
+          return {
+            ...prev,
+            [parent]: {
+              ...parentObj,
+              [child]: value,
+            },
+          };
+        }
+        return prev; // Return unchanged if not an object
+      });
     } else {
       setFormData((prev) => ({
         ...prev,
