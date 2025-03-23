@@ -1,0 +1,56 @@
+.user-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-card-content {
+  display: block;
+  padding: 20px;
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.user-card-content h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+.user-card-content p {
+  margin-bottom: 8px;
+  color: #7f8c8d;
+}
+
+.user-card-actions {
+  display: flex;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.edit-button {
+  background-color: #3498db;
+  color: white;
+  margin-right: 10px;
+}
+
+.edit-button:hover {
+  background-color: #2980b9;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
